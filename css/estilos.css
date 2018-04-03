@@ -1,39 +1,38 @@
-.navseg{
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-}
-@media only screen and (min-width:768px) {
+
+@media only screen and (min-width:769px) {
     .navprincipal {
         height: 70px;
     }
     .navseg {
         background-color: #009fff !important;
-        height: 40px;
+        height: 30px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
     }
 
     .navseg div ul li:hover {
         border-bottom: 2px solid #fff;
     }
 
-    .navseg div ul li a{
+    .navseg div ul li a {
         color: #fff !important;
     }
 
 
 }
 
-.logo{
+.logo {
     height: 65px;
 }
 
-nav .d-flex img{
+nav .d-flex img {
     height: 40px !important;
     margin: 10px;
 }
 
-nav .d-flex img:hover{
-       box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+nav .d-flex img:hover {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
 
@@ -45,7 +44,7 @@ nav .d-flex img:hover{
     color: #099fff;
 }
 
-a{
+a {
     color: #009fff;
     font-weight: bold;
 }
