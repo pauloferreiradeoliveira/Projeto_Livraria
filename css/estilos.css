@@ -26,9 +26,13 @@
 
 }
 
-nav .d-flex img {
+.icon {
     height: 40px !important;
     margin: 10px;
+}
+
+.livro{
+    margin-left: 10px;
 }
 
 nav .d-flex img:hover {
@@ -46,6 +50,6 @@ nav .d-flex img:hover {
 }
 
 a {
-    color: #009fff;
+    color: #009fff !important;
     font-weight: bold;
 }

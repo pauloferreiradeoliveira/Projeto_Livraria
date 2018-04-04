@@ -59,24 +59,29 @@
 
         <div class="d-flex">
             <div class="dropdown show">
-                <img src="imagens/carrinho.png" class=" dropleft" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <img src="imagens/carrinho.png" class=" dropleft icon" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="dropdown-menu" style="width: 250px" aria-labelledby="dropdownMenuLink">
                     <h6 class="dropdown-header">Livros Comprados</h6>
+                    <div class="dropdown-divider"></div>
 
-                        <div class="row">
-                            <div class="col-2">
-                                <img src="imagens/livros/Alien-Alan.jpg">
+                        <article class="row">
+                            <div class="col-3">
+                                <img src="imagens/livros/Alien-Alan.jpg" class="img-fluid livro">
                             </div>
-                            <div class="col-9">
-                                Nome do Livro
+                            <div class="col-8">
+                                <a href="#">Nome do Livro</a>
+                                <p>Valor</p>
                             </div>
-                        </div>
+                        </article>
+
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Limpar</a>
 
                 </div>
             </div>
 
             <div class="collapse navbar-collapse navbarSupportedContent ">
-                <img src="imagens/user2.png" class="mx-center">
+                <img src="imagens/user2.png" class="mx-center icon">
                 <a href="#">Login</a>&nbsp;ou&nbsp;<a href="#">Cadastrar</a>
             </div>
         </div>
