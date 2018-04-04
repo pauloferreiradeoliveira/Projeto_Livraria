@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html lang="pt-br">
+
 <head>
     <!-- Titulo -->
     <title>Clube do Livro</title>
@@ -36,6 +37,7 @@
     <!-- CSS Interno -->
     <style></style>
 </head>
+
 <body>
     <!-- Começo do Header -->
     <header class="navbar navbar-expand-lg navbar-light bg-light">
@@ -44,7 +46,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <!-- Logo -->
-        <div class="navbar-brand">
+        <div class="navbar-brand" id="logo">
             <img class="logo" src="imagens/logo.png" href="#">
         </div>
         <!-- Pesquisa -->
@@ -63,25 +65,25 @@
                     <img src="imagens/carrinho.png" class="p-2 position-absolute">
                     <span class="badge badge-pill badge-primary position-relative">1</span>
                 </div>
-                <div class="dropdown-menu dropdown-menu-right"  style="width: 250px" >
+                <div class="dropdown-menu dropdown-menu-right" style="width: 250px">
                     <button type="button" class="close" aria-label="Close">
                         <span aria-hidden="true">&times;&nbsp;</span>
                     </button>
                     <h6 class="dropdown-header">Livros Comprados</h6>
                     <div class="dropdown-divider"></div>
-                        <!-- Livros -->
-                        <article class="row">
-                            <div class="col-3">
-                                <img src="imagens/livros/Alien-Alan.jpg" class="img-fluid livro">
-                            </div>
-                            <div class="col-8">
-                                <a href="#">Nome do Livro</a>
-                                <p>Valor</p>
-                            </div>
-                        </article>
-                        <!-- Fim - Livros -->
+                    <!-- Livros -->
+                    <article class="row">
+                        <div class="col-3">
+                            <img src="imagens/livros/imagens-romance/a-caderneta-vermelha.jpg" class="img-fluid livro">
+                        </div>
+                        <div class="col-8">
+                            <a href="#">A Caderneta Vermelha</a>
+                            <p>R$ 14,99</p>
+                        </div>
+                    </article>
+                    <!-- Fim - Livros -->
                     <div class="dropdown-divider"></div>
-                    <span class="dropdown-item active" href="#">Valor Total:</span>
+                    <span class="dropdown-item active" href="#">Valor Total: R$14,99</span>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Finalizar Comprar</a>
                 </div>
@@ -90,7 +92,7 @@
             <!-- Cadastro -->
             <div class="collapse navbar-collapse navbarSupportedContent ">
                 <img src="imagens/user2.png" class="mx-center icon">
-                <a href="#">Login</a>&nbsp;ou&nbsp;<a href="#">Cadastrar</a>
+                <a href="#login" id="login">Login</a>&nbsp;ou&nbsp;<a href="#cadstrar" id="cadastrar">Cadastrar</a>
             </div>
         </div>
     </header>
@@ -98,30 +100,53 @@
     <!-- Começo do Nav -->
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="collapse navbar-collapse navbarSupportedContent ">
-            <ul class="navbar-nav mr-auto mx-auto">
+             <ul class="navbar-nav mr-auto mx-auto">
                 <!-- Categorias -->
                 <li class="nav-item ">
-                    <a class="nav-link" href="#">Categoria</a>
+                    <a class="nav-link" href="#">Romance</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Categoria 2</a>
+                    <a class="nav-link" href="#">Ficção Científica</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Categoria 3</a>
+                    <a class="nav-link" href="#">Policial</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Categoria 4</a>
+                    <a class="nav-link" href="#">Auto-ajuda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Humor</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Suspense</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Psicologia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Religiosos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contos</a>
                 </li>
             </ul>
         </div>
     </nav>
     <!-- Fim - Nav (Onde estao as Categorias) -->
     <!-- Começo - Conteúdo da Página -->
-    <div class="container">
+    <div id="container" class="container">
 
     </div>
     <!-- Fim - Conteudo da Página -->
-
+    <footer>
+        <div>
+            <p><span>Livraria Clube do Livro </span>, todos os direitos reservados. </p>
+            <p>Copyrights 2018 Livraria Clube do Livro S/A | Av. Hélio Prates, 2300, 10º andar, Brasília - DF - Brasil CEP 01355-300 | CNPJ 85.410.352/0001-72 </p>
+            <p>Os preços, condições de pagamento e valores de frete são válidos exclusivamente para as compras efetuadas em nosso site, não valendo, necessariamente, para as nossas lojas físicas.
+            </p>
+            <p>Contato:<a href="livrariaclubedolivro@gmail.com">livrariaclubedolivro@gmail.com</a> Integrantes: Ana Carolina, Daiane, Luis Eduardo e Paulo Ferreira </p>
+        </div>
+    </footer>
     <!-- JavaScript - Bibliotecas Externas
         Importando o JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -137,10 +162,45 @@
     <script type="text/javascript">
         $(document).ready(function() {
 
-            // Codigo Aqui <---
+            function pegarPagina(contudo) {
+                //Criando uma Requisicao - Começo
+                $.ajax({
+                    url: "conteudo/" + contudo + ".html",
+                    beforeSend: function() {
+                        //Antes de mandar a requisição
+
+                    },
+                    success: function(resultado) {
+                        $("#container").html(resultado);
+                    },
+                    statusCode: {
+                        404: function() {
+                            //Erro - Nao encontrado
+                        }
+                    }
+                });
+                //Fim - requisição
+            };
+
+            pegarPagina("principal");
+
+             $("#logo").click(function(){
+                pegarPagina("principal");
+            });
+
+            $("#login").click(function(){
+                pegarPagina("login");
+            });
+
+            $("#cadastrar").click(function(){
+                pegarPagina("formulario");
+            });
+
         });
+
     </script>
     <!-- Fim - JavaScript - JQuery - Algoritimo -->
     <!-- Fim - All -->
 </body>
+
 </html>
