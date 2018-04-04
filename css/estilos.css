@@ -1,54 +1,48 @@
+/*
+    Cor Primaria:#009fff;
+*/
+/* Header e Nav - Começo */
+@media only screen and (max-width:768px) {
+    .dropdown-menu {left: -200px !important;}
+}
 
 @media only screen and (min-width:769px) {
-    .navprincipal {
-        height: 70px;
-    }
-    .navseg {
+    header {height: 70px;}
+
+    nav {
         background-color: #009fff !important;
         height: 30px;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
         transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
     }
 
-    .navseg div ul li:hover {
-        border-bottom: 2px solid #fff;
-    }
+    nav div ul li:hover { border-bottom: 2px solid #fff; }
 
-    .navseg div ul li a {
-        color: #fff !important;
-    }
-
-
+    nav div ul li a { color: #fff !important;}
 }
 
-.logo {
-    height: 65px;
+.dropleft {margin-right: 30px;}
 
-}
+.logo {height: 65px;}
 
+/*User  e Carrinho*/
 .icon {
     height: 40px !important;
     margin: 10px;
 }
 
-.livro{
-    margin-left: 10px;
-}
+/*Livro do Carrinho*/
+.livro {margin-left: 10px;}
 
-nav .d-flex img:hover {
+header .d-flex img:hover {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
+.navbar-toggler {border: none;}
+/*Fim - Header*/
 
-.navbar-toggler {
-    border: none;
-}
-
-.navbar-toggler-icon {
-    color: #099fff;
-}
-
+/*Para Todos os Links*/
 a {
     color: #009fff !important;
     font-weight: bold;

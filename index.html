@@ -1,9 +1,8 @@
 <!DOCTYPE HTML>
 <html lang="pt-br">
-
 <head>
     <!-- Titulo -->
-    <title></title>
+    <title>Clube do Livro</title>
 
     <!-- MetasTags -->
     <!-- Mudança Mapa de Caracteres -->
@@ -25,7 +24,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
     <!--Fim MetasTags-->
-
     <!-- FavIcon -->
     <link href="imagens/favicon.png" rel="shortcut icon" type="image/png">
 
@@ -37,33 +35,41 @@
 
     <!-- CSS Interno -->
     <style></style>
-
-
 </head>
-
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light navprincipal">
+    <!-- Começo do Header -->
+    <header class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- Botão Para mostra o menu -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Logo -->
         <div class="navbar-brand">
             <img class="logo" src="imagens/logo.png" href="#">
         </div>
+        <!-- Pesquisa -->
         <div class="collapse navbar-collapse navbarSupportedContent">
             <div class="form-group">
                 <input type="text" class="form-control" id="" placeholder="">
             </div>
-
         </div>
 
         <div class="d-flex">
+            <!-- Começo - Dropdowns - Carrinho  -->
             <div class="dropdown show">
-                <img src="imagens/carrinho.png" class=" dropleft icon" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <div class="dropdown-menu" style="width: 250px" aria-labelledby="dropdownMenuLink">
+                <!-- O Que Vai Aparecer -->
+                <div class="dropleft" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <!-- position: Para Um elemento ficar encima do outro -->
+                    <img src="imagens/carrinho.png" class="p-2 position-absolute">
+                    <span class="badge badge-pill badge-primary position-relative">1</span>
+                </div>
+                <div class="dropdown-menu dropdown-menu-right"  style="width: 250px" >
+                    <button type="button" class="close" aria-label="Close">
+                        <span aria-hidden="true">&times;&nbsp;</span>
+                    </button>
                     <h6 class="dropdown-header">Livros Comprados</h6>
                     <div class="dropdown-divider"></div>
-
+                        <!-- Livros -->
                         <article class="row">
                             <div class="col-3">
                                 <img src="imagens/livros/Alien-Alan.jpg" class="img-fluid livro">
@@ -73,24 +79,29 @@
                                 <p>Valor</p>
                             </div>
                         </article>
-
+                        <!-- Fim - Livros -->
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Limpar</a>
-
+                    <span class="dropdown-item active" href="#">Valor Total:</span>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Finalizar Comprar</a>
                 </div>
             </div>
-
+            <!-- Fim - Dropdowns - Carrinho  -->
+            <!-- Cadastro -->
             <div class="collapse navbar-collapse navbarSupportedContent ">
                 <img src="imagens/user2.png" class="mx-center icon">
                 <a href="#">Login</a>&nbsp;ou&nbsp;<a href="#">Cadastrar</a>
             </div>
         </div>
-    </nav>
-    <nav class="navbar navbar-expand-lg navbar-light navseg">
+    </header>
+    <!-- Fim Header -->
+    <!-- Começo do Nav -->
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="collapse navbar-collapse navbarSupportedContent ">
             <ul class="navbar-nav mr-auto mx-auto">
+                <!-- Categorias -->
                 <li class="nav-item ">
-                    <a class="nav-link" href="#">Categoria<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#">Categoria</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Categoria 2</a>
@@ -101,18 +112,17 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Categoria 4</a>
                 </li>
-
             </ul>
         </div>
     </nav>
+    <!-- Fim - Nav (Onde estao as Categorias) -->
     <!-- Começo - Conteúdo da Página -->
     <div class="container">
 
     </div>
     <!-- Fim - Conteudo da Página -->
 
-    <!--Começo - ALL JavaScript
-        Começo -> Bibliotecas Externas
+    <!-- JavaScript - Bibliotecas Externas
         Importando o JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -121,18 +131,16 @@
 
     <!-- Importando o BootsTrap - CCS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <!-- Fim -> Bibliotecas Externas -->
-
+    <!-- Fim - Bibliotecas Externas -->
 
     <!-- JavaScript - JQuery - Algoritimo -->
     <script type="text/javascript">
         $(document).ready(function() {
+
             // Codigo Aqui <---
         });
-
     </script>
     <!-- Fim - JavaScript - JQuery - Algoritimo -->
-    <!-- Fim - All JavaScript  -->
+    <!-- Fim - All -->
 </body>
-
 </html>
