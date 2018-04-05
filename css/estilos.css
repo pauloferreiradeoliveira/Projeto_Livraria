@@ -8,9 +8,9 @@ body{font-family: 'Quicksand', sans-serif;}
     Cor Primaria:#009fff;
 */
 /* Header e Nav - Começo */
-@media only screen and (max-width:768px) {
-    .dropdown-menu {left: -200px !important;}
-}
+
+.dropdown-menu {left: -200px !important;}
+
 
 @media only screen and (min-width:769px) {
     header {height: 70px;}
@@ -27,7 +27,9 @@ body{font-family: 'Quicksand', sans-serif;}
     nav div ul li a { color: #fff !important;}
 }
 
-.dropleft {margin-right: 30px;}
+.dropleft {
+    margin-right: 30px;
+}
 
 .logo {height: 65px;}
 

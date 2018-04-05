@@ -53,16 +53,28 @@
         </a>
         <!-- Pesquisa -->
         <div class="collapse navbar-collapse navbarSupportedContent">
-            <div class="form-group">
-                <input type="text" class="form-control" id="" placeholder="">
+            <div class="form-group col-11">
+                <div class="input-group">
+
+                    <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Username">
+                     <a href="#" class="input-group-prepend">
+                        <p class="input-group-text">@</p>
+                    </a>
+                </div>
+
             </div>
         </div>
 
         <div class="d-flex">
+            <!-- Cadastro -->
+            <div class="collapse navbar-collapse  navbarSupportedContent  ">
+                <img src="imagens/user2.png" class="mx-center icon">
+                <a href="#login" id="login">Login</a>&nbsp;ou&nbsp;<a href="#cadastrar" id="cadastrar">Cadastrar</a>&nbsp;
+            </div>
             <!-- Começo - Dropdowns - Carrinho  -->
-            <div class="dropdown show">
+            <div class="dropdown show mr-2 ">
                 <!-- O Que Vai Aparecer -->
-                <div class="dropleft" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="dropleft" id="dropdownMenuButton " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <!-- position: Para Um elemento ficar encima do outro -->
                     <img src="imagens/carrinho.png" class="p-2 position-absolute">
                     <span class="badge badge-pill badge-primary position-relative">1</span>
@@ -91,18 +103,14 @@
                 </div>
             </div>
             <!-- Fim - Dropdowns - Carrinho  -->
-            <!-- Cadastro -->
-            <div class="collapse navbar-collapse navbarSupportedContent ">
-                <img src="imagens/user2.png" class="mx-center icon">
-                <a href="#login" id="login">Login</a>&nbsp;ou&nbsp;<a href="#cadastrar" id="cadastrar">Cadastrar</a>
-            </div>
+
         </div>
     </header>
     <!-- Fim Header -->
     <!-- Começo do Nav -->
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="collapse navbar-collapse navbarSupportedContent ">
-             <ul class="navbar-nav mr-auto mx-auto">
+            <ul class="navbar-nav mr-auto mx-auto">
                 <!-- Categorias -->
                 <li class="nav-item ">
                     <a class="nav-link" href="#">Romance</a>
@@ -177,17 +185,17 @@
                     },
                     statusCode: {
                         404: function() {
-                              $("#container").html("<h1>Não Encontrado</h1>");
+                            $("#container").html("<h1>Não Encontrado</h1>");
                         }
                     }
                 });
                 //Fim - requisição
             };
 
-            function getUrl () {
-                var url =  window.location.href;
-                url = url.substring(url.search("#")+1);
-                if(url == window.location.href){
+            function getUrl() {
+                var url = window.location.href;
+                url = url.substring(url.search("#") + 1);
+                if (url == window.location.href) {
                     return "principal"
                 }
                 return url;
@@ -195,15 +203,15 @@
 
             pegarPagina(getUrl());
 
-             $("#logo").click(function(){
+            $("#logo").click(function() {
                 pegarPagina("principal");
             });
 
-            $("#login").click(function(){
+            $("#login").click(function() {
                 pegarPagina("login");
             });
 
-            $("#cadastrar").click(function(){
+            $("#cadastrar").click(function() {
                 pegarPagina("cadastrar");
             });
 
