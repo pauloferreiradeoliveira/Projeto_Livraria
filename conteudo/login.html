@@ -1,21 +1,86 @@
 <main class="container">
     <h1>Login</h1>
 
-    <form class="col-md-8 offset-2">
+    <form class="col-md-8 offset-2" action="#" method="post">
         <div class="form-group">
-            <label for="exampleInputEmail1">Email ou Usuaio:</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <label for="exampleInputEmail1">Email ou Usuário:</label>
+            <input type="text" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Senha:</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <input type="password" class="form-control" id="senha" placeholder="Password">
         </div>
         <div class="form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">Salvar dados</label>
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary">Enviar</button>
+            <button type="submit" id="enviar" class="btn btn-primary">Enviar</button>
         </div>
     </form>
 </main>
+<!-- Modal -->
+<div class="modal fade" id="modal" tabindex="-1" role="dialog"  aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <!-- Parte Titulo - Modal -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="titulo">Logado com Sucesso</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <!-- Parte Corpo - Modal -->
+            <div class="modal-body">
+                <p id="corpo">Bem Vindo User !!!</p>
+            </div>
+            <!-- Parte Final - Modal -->
+            <div class="modal-footer">
+                <button type="button" id="fechar" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="button" id="fechar1" class="btn btn-danger d-none" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Fim - Modal -->
+
+<script>
+    function validar() {
+        var val = true;
+        $("input").removeClass("is-invalid");
+        
+        if($("#email").val() == ""){
+            $("#email").addClass("is-invalid");
+            val = false;
+        }
+        if($("#senha").val() == ""){
+            $("#senha").addClass("is-invalid");
+            val = false;
+        }
+        
+        return val;
+    }
+    
+    $("#enviar").click(function(event){
+        event.preventDefault();
+        if(validar()){
+            $("#fechar").removeClass("d-none");
+            $("#fechar1").addClass("d-none");
+            $("#titulo").html("Logado com Sucesso");
+            $("#corpo").html("Bem Vindo User !!!");
+            $('#modal').modal('show'); 
+        }
+        else{
+            $("#fechar1").removeClass("d-none");
+            $("#fechar").addClass("d-none");
+            $("#titulo").html("Invalidos");
+            $("#corpo").html("Prencha os Campos");
+             $('#modal').modal('show'); 
+        }
+    });
+    
+    $("#fechar").click(function(){
+        $("form").submit();
+    });
+    
+</script>

@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 
-
 body{font-family: 'Quicksand', sans-serif;}
 
 
@@ -48,6 +47,22 @@ header .d-flex img:hover {
 }
 
 .navbar-toggler {border: none;}
+
+.buscar{
+    margin-top: 10px;
+    border: 1px solid #009fff;
+}
+
+.buscar input{
+    border: none;
+    background-color: #f8f9fa;
+}
+
+
+.buscar a{
+    margin-top: 5px;
+}
+
 /*Fim - Header*/
 
 /*Conteudo*/

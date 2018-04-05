@@ -39,14 +39,14 @@
                                 <div class="card-body text-center">
                                     <h5 class="card-title">A Caderneta Vermelha</h5>
                                     <p class="card-text">R$ 14,99</p>
-
+                                </div>
+                                <div class="card-footer text-muted">
+                                    <button type="button" class="btn btn-info"><img src="imagens/ic_shopping_cart_white_24px.svg"> Adicionar</button>
                                 </div>
                             </div>
                         </a>
                     </div>
                     <!-- -->
-
-
                     <div class="col-6 col-md-2 sem">
                         <a href="#">
                             <div class="card">
@@ -55,6 +55,9 @@
                                     <h5 class="card-title">A maleta</h5>
                                     <p class="card-text">R$ 25,99</p>
                                     <p class="card-text"><small class="text-muted">2x de R$ 12,99</small></p>
+                                </div>
+                                <div class="card-footer text-muted">
+                                    <button type="button" class="btn btn-info"><img src="imagens/ic_shopping_cart_white_24px.svg"> Adicionar</button>
                                 </div>
                             </div>
                         </a>
@@ -68,6 +71,9 @@
                                     <p class="card-text">R$ 34,99</p>
                                     <p class="card-text"><small class="text-muted">2x de R$ 17,49</small></p>
                                 </div>
+                                <div class="card-footer text-muted">
+                                    <button type="button" class="btn btn-info"><img src="imagens/ic_shopping_cart_white_24px.svg"> Adicionar</button>
+                                </div>
                             </div>
                         </a>
                     </div>
@@ -79,6 +85,9 @@
                                     <h5 class="card-title">Entre o agora e o nunca</h5>
                                     <p class="card-text">R$ 23,99</p>
                                     <p class="card-text"><small class="text-muted">2x de R$ R$ 11,99</small></p>
+                                </div>
+                                <div class="card-footer text-muted">
+                                    <button type="button" class="btn btn-info"><img src="imagens/ic_shopping_cart_white_24px.svg"> Adicionar</button>
                                 </div>
                             </div>
                         </a>
@@ -92,6 +101,10 @@
                                     <p class="card-text">R$ 39,99</p>
                                     <p class="card-text"><small class="text-muted">2x de R$ 19,99</small></p>
                                 </div>
+                                <div class="card-footer text-muted">
+                                    <button type="button" class="btn btn-info"><img src="imagens/ic_shopping_cart_white_24px.svg"> Adicionar</button>
+                                </div>
+
                             </div>
                         </a>
                     </div>
@@ -104,6 +117,9 @@
                                     <p class="card-text">59,99</p>
                                     <p class="card-text"><small class="text-muted">4x de R$ 14,99</small></p>
                                 </div>
+                                <div class="card-footer text-muted">
+                                    <button type="button" class="btn btn-info" id="tt"><img src="imagens/ic_shopping_cart_white_24px.svg"> Adicionar</button>
+                                </div>
                             </div>
                         </a>
                     </div>
@@ -112,3 +128,11 @@
         </article>
     </section>
 </main>
+
+<script>
+    $("#tt").click(function(){
+       var card = $(this).parent().parent();
+        var nome = card.find('.card-title').html();
+        alert(nome);
+    });
+</script>
