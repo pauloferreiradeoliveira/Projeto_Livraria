@@ -46,9 +46,11 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <!-- Logo -->
-        <div class="navbar-brand" id="logo">
-            <img class="logo" src="imagens/logo.png" href="#">
-        </div>
+        <a href="">
+            <div class="navbar-brand" id="logo">
+                <img class="logo" src="imagens/logo.png" href="#">
+            </div>
+        </a>
         <!-- Pesquisa -->
         <div class="collapse navbar-collapse navbarSupportedContent">
             <div class="form-group">
@@ -92,7 +94,7 @@
             <!-- Cadastro -->
             <div class="collapse navbar-collapse navbarSupportedContent ">
                 <img src="imagens/user2.png" class="mx-center icon">
-                <a href="#login" id="login">Login</a>&nbsp;ou&nbsp;<a href="#cadstrar" id="cadastrar">Cadastrar</a>
+                <a href="#login" id="login">Login</a>&nbsp;ou&nbsp;<a href="#cadastrar" id="cadastrar">Cadastrar</a>
             </div>
         </div>
     </header>
@@ -175,14 +177,23 @@
                     },
                     statusCode: {
                         404: function() {
-                            //Erro - Nao encontrado
+                              $("#container").html("<h1>Não Encontrado</h1>");
                         }
                     }
                 });
                 //Fim - requisição
             };
 
-            pegarPagina("principal");
+            function getUrl () {
+                var url =  window.location.href;
+                url = url.substring(url.search("#")+1);
+                if(url == window.location.href){
+                    return "principal"
+                }
+                return url;
+            };
+
+            pegarPagina(getUrl());
 
              $("#logo").click(function(){
                 pegarPagina("principal");
@@ -193,7 +204,7 @@
             });
 
             $("#cadastrar").click(function(){
-                pegarPagina("formulario");
+                pegarPagina("cadastrar");
             });
 
         });

@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 
-*{font-family: 'Quicksand', sans-serif;}
+
+body{font-family: 'Quicksand', sans-serif;}
+
 
 /*
     Cor Primaria:#009fff;
@@ -47,9 +49,7 @@ header .d-flex img:hover {
 /*Fim - Header*/
 
 /*Conteudo*/
-main{
-    margin-top: 10px;
-}
+main{margin-top: 10px;}
 
 /*Para Todos os Links*/
 a {
@@ -90,7 +90,7 @@ a:hover{
    font-size: 15px;
 }
 
-.titulos{
+.titulos ,h1{
     margin: 20px 0px 40px 0px;
     width: 100%;
     padding-bottom: 10px;
@@ -98,6 +98,7 @@ a:hover{
     color: #009fff;
     font-weight: bolder;
 }
+
 
 /*Footer*/
 footer{
