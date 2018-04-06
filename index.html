@@ -4,36 +4,27 @@
 <head>
     <!-- Titulo -->
     <title>Clube do Livro</title>
-
     <!-- MetasTags -->
     <!-- Mudança Mapa de Caracteres -->
     <meta charset="UTF-8">
-
     <!-- Autor da Pagina -->
     <meta name="author" content="">
-
     <!-- Mecanismo de Busca -->
     <meta name="description" content="">
     <meta name="keywords" content="desenvolvimento,desenvolverdor,front-end,html,html5,css,css3,programação,programador,javascript,jquery,senai,taguatinga,qua207.002,vespetino,moblie,first,deseign responsivo,script">
     <meta name="robots" content="index,follow">
     <!-- Fim Mecanismo de Busca -->
-
     <!-- Desing Responsivo -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Compatibilidade com IE/Edge -->
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-
     <!--Fim MetasTags-->
     <!-- FavIcon -->
     <link href="imagens/favicon.png" rel="shortcut icon" type="image/png">
-
     <!-- Bootstrap - CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
     <!-- CSS Externo -->
     <link href="css/estilos.css" rel="stylesheet" type="text/css" media="all">
-
     <!-- CSS Interno -->
     <style></style>
 </head>
@@ -60,10 +51,8 @@
                         <img src="imagens/ic_search_azul.svg">
                     </a>
                 </div>
-
             </div>
         </div>
-
         <div class="d-flex">
             <!-- Cadastro -->
             <div class="collapse navbar-collapse  navbarSupportedContent  ">
@@ -76,7 +65,7 @@
                 <div class="dropleft" id="dropdownMenuButton " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <!-- position: Para Um elemento ficar encima do outro -->
                     <img src="imagens/carrinho.png" class="p-2 position-absolute">
-                    <span class="badge badge-pill badge-primary position-relative">2</span>
+                    <span class="badge badge-pill badge-primary position-relative" id="qd">0</span>
                 </div>
                 <div class="dropdown-menu dropdown-menu-right" style="width: 250px">
                     <button type="button" class="close" aria-label="Close">
@@ -85,25 +74,15 @@
                     <h6 class="dropdown-header">Livros Comprados</h6>
                     <div class="dropdown-divider"></div>
                     <!-- Livros -->
-                    <article class="row">
-                        <div class="col-3">
-                            <img src="imagens/livros/imagens-romance/a-caderneta-vermelha.jpg" class="img-fluid livro">
-                        </div>
-                        <div class="col-8">
-                            <a href="#">A Caderneta Vermelha</a>
-                            <p>R$ 14,99</p>
-                            
-                        </div>
+                    <article id="livros">
                     </article>
                     <!-- Fim - Livros -->
-                    <div class="dropdown-divider"></div>
-                    <span class="dropdown-item active" href="#">Valor Total: R$14,99</span>
+                    <span class="dropdown-item active" id="valorTotal" href="#">Valor Total: R$14,99</span>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Finalizar Comprar</a>
                 </div>
             </div>
             <!-- Fim - Dropdowns - Carrinho  -->
-
         </div>
     </header>
     <!-- Fim Header -->
@@ -113,16 +92,16 @@
             <ul class="navbar-nav mr-auto mx-auto">
                 <!-- Categorias -->
                 <li class="nav-item ">
-                    <a class="nav-link"  id="romance" href="#romance">Romance</a>
+                    <a class="nav-link" id="romance" href="#romance">Romance</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"  id="ficcao" href="#ficcao">Ficção Científica</a>
+                    <a class="nav-link" id="ficcao" href="#ficcao">Ficção Científica</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"  id="policial" href="#policial">Policial</a>
+                    <a class="nav-link" id="policial" href="#policial">Policial</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"  id="ajuda" href="#ajuda">Auto-ajuda</a>
+                    <a class="nav-link" id="autoajuda" href="#autoajuda">Auto-ajuda</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="humor" href="#humor">Humor</a>
@@ -145,7 +124,6 @@
     <!-- Fim - Nav (Onde estao as Categorias) -->
     <!-- Começo - Conteúdo da Página -->
     <div id="container" class="container">
-
     </div>
     <!-- Fim - Conteudo da Página -->
     <footer>
@@ -160,73 +138,13 @@
     <!-- JavaScript - Bibliotecas Externas
         Importando o JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
     <!-- Importando Popper.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-
     <!-- Importando o BootsTrap - CCS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <!-- Fim - Bibliotecas Externas -->
-
-    <!-- JavaScript - JQuery - Algoritimo -->
-    <script type="text/javascript">
-        $(document).ready(function() {
-
-            function pegarPagina(contudo) {
-                //Criando uma Requisicao - Começo
-                $.ajax({
-                    url: "conteudo/" + contudo + ".html",
-                    beforeSend: function() {
-                        //Antes de mandar a requisição
-
-                    },
-                    success: function(resultado) {
-                        $("#container").html(resultado);
-                    },
-                    statusCode: {
-                        404: function() {
-                            $("#container").html("<h1>Não Encontrado</h1>");
-                        }
-                    }
-                });
-                //Fim - requisição
-            };
-
-            function getUrl() {
-                var url = window.location.href;
-                url = url.substring(url.search("#") + 1);
-                if (url == window.location.href || url == "") {
-                    return "principal"
-                }
-                
-                return url;
-            };
-
-            pegarPagina(getUrl());
-
-            $("#logo").click(function() {
-                pegarPagina("principal");
-            });
-
-            $("#login").click(function() {
-                pegarPagina("login");
-            });
-
-            $("#cadastrar").click(function() {
-                pegarPagina("cadastrar");
-            });
-            
-            $("#humor").click(function() {
-                pegarPagina("humor");
-            });
-            
-             $("#romance").click(function() {
-                pegarPagina("romance");
-            });
-
-        });
-
-    </script>
+    <!-- JavaScript - JQuery - Meu Algoritimo -->
+    <script type="text/javascript" src="js/scriptprincipal.js"></script>
     <!-- Fim - JavaScript - JQuery - Algoritimo -->
     <!-- Fim - All -->
 </body>

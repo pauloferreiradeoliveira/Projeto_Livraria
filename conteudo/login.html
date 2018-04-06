@@ -1,6 +1,5 @@
 <main class="container">
     <h1>Login</h1>
-
     <form class="col-md-8 offset-2" action="#" method="post">
         <div class="form-group">
             <label for="exampleInputEmail1">Email ou Usuário:</label>
@@ -20,7 +19,7 @@
     </form>
 </main>
 <!-- Modal -->
-<div class="modal fade" id="modal" tabindex="-1" role="dialog"  aria-hidden="true">
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <!-- Parte Titulo - Modal -->
@@ -43,44 +42,42 @@
     </div>
 </div>
 <!-- Fim - Modal -->
-
 <script>
-    function validar() {
-        var val = true;
-        $("input").removeClass("is-invalid");
-        
-        if($("#email").val() == ""){
-            $("#email").addClass("is-invalid");
-            val = false;
-        }
-        if($("#senha").val() == ""){
-            $("#senha").addClass("is-invalid");
-            val = false;
-        }
-        
-        return val;
+    //Validando Campos
+function validar() {
+    var val = true;
+    $("input").removeClass("is-invalid");
+
+    if ($("#email").val() == "") {
+        $("#email").addClass("is-invalid");
+        val = false;
     }
-    
-    $("#enviar").click(function(event){
-        event.preventDefault();
-        if(validar()){
-            $("#fechar").removeClass("d-none");
-            $("#fechar1").addClass("d-none");
-            $("#titulo").html("Logado com Sucesso");
-            $("#corpo").html("Bem Vindo User !!!");
-            $('#modal').modal('show'); 
-        }
-        else{
-            $("#fechar1").removeClass("d-none");
-            $("#fechar").addClass("d-none");
-            $("#titulo").html("Invalidos");
-            $("#corpo").html("Prencha os Campos");
-             $('#modal').modal('show'); 
-        }
-    });
-    
-    $("#fechar").click(function(){
-        $("form").submit();
-    });
-    
+    if ($("#senha").val() == "") {
+        $("#senha").addClass("is-invalid");
+        val = false;
+    }
+
+    return val;
+}
+
+$("#enviar").click(function(event) {
+    event.preventDefault();
+    if (validar()) {
+        $("#fechar").removeClass("d-none");
+        $("#fechar1").addClass("d-none");
+        $("#titulo").html("Logado com Sucesso");
+        $("#corpo").html("Bem Vindo User !!!");
+        $('#modal').modal('show');
+    } else {
+        $("#fechar1").removeClass("d-none");
+        $("#fechar").addClass("d-none");
+        $("#titulo").html("Invalidos");
+        $("#corpo").html("Prencha os Campos");
+        $('#modal').modal('show');
+    }
+});
+
+$("#fechar").click(function() {
+    $("form").submit();
+});
 </script>
