@@ -4,7 +4,6 @@ body {
     font-family: 'Quicksand', sans-serif;
 }
 
-
 /*
     Cor Primaria:#009fff;
 */
@@ -40,6 +39,8 @@ body {
     nav div ul li a {
         color: #fff !important;
     }
+
+
 }
 
 .dropleft {
@@ -50,6 +51,10 @@ body {
     height: 65px;
 }
 
+.card-footer{
+    padding-left: 7%;
+    align-content: center;
+}
 
 /*User  e Carrinho*/
 
@@ -58,64 +63,50 @@ body {
     margin: 10px;
 }
 
-
 /*Livro do Carrinho*/
 
-.livro {
-    margin-left: 10px;
-}
+.livro {margin-left: 10px;}
 
 header .d-flex img:hover {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
-.navbar-toggler {
-    border: none;
-}
+.navbar-toggler {border: none;}
 
 .buscar {
     margin-top: 10px;
     border: 1px solid #009fff;
 }
 
-.buscar a {
-    margin-top: 5px;
-}
+.buscar a {margin-top: 5px;}
 
 .buscar input {
     border: none;
     background-color: #f8f9fa;
 }
 
-.buscar input:focus{
-     background-color: #f8f9fa;
-     border: 0px;   
+.buscar input:focus {
+    background-color: transparent;
+    border: 0;
+    outline: none;
 }
+
 
 /*Fim - Header*/
 
 
 /*Conteudo*/
 
-main {
-    margin-top: 10px;
-}
-
+main {margin-top: 10px;}
 
 /*Para Todos os Links*/
 
-a {
-    font-weight: bold;
-}
+a {font-weight: bold;}
 
-a:hover {
-    text-decoration: none;
-}
+a:hover {text-decoration: none;}
 
-.sem {
-    padding: 0px !important;
-}
+.sem {padding: 0 !important;}
 
 .card-body {
     padding: 4px !important;
@@ -127,25 +118,16 @@ a:hover {
     font-weight: bolder;
 }
 
-.card-img-top {
-    height: 220px;
-}
+.card-img-top {height: 220px;}
 
-.card {
-    margin-top: 10px;
-}
+.card {margin-top: 10px;}
 
-.card:hover {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
+.card:hover {box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);}
 
-.card-title {
-    font-size: 15px;
-}
+.card-title {font-size: 15px;}
 
-.titulos,
-h1 {
-    margin: 20px 0px 40px 0px;
+.titulos,h1 {
+    margin: 20px 0 40px 0;
     width: 100%;
     padding-bottom: 10px;
     border-bottom: 1px solid #009fff;
@@ -153,15 +135,12 @@ h1 {
     font-weight: bolder;
 }
 
-
 /*Carrinho*/
 
 .car {
-    border-top: 1px solid #f8f8ff ;
+    border-top: 1px solid #f8f8ff;
     margin-bottom: 10px;
-
     padding-top: 10px;
-   
 }
 
 .car img {
@@ -181,9 +160,7 @@ h1 {
     font-weight: bolder;
 }
 
-.car input {
-    width: 40px;
-}
+.car input {width: 40px;}
 
 .car .row {
     margin-bottom: 10px;
@@ -201,9 +178,7 @@ h1 {
     padding: 10px;
 }
 
-
 /* Fim - Carrinho */
-
 
 /*Footer*/
 
@@ -216,10 +191,6 @@ footer {
     padding: 10px;
 }
 
-footer span {
-    font-weight: bolder;
-}
+footer span {font-weight: bolder;}
 
-footer a {
-    color: #fff;
-}
+footer a {color: #fff;}

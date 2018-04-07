@@ -1,17 +1,17 @@
 <main class="container">
     <h1>Login</h1>
-    <form class="col-md-8 offset-2" action="#" method="post">
+    <form class="col-md-8 offset-md-2 col-12" action="#" method="post">
         <div class="form-group">
-            <label for="exampleInputEmail1">Email ou Usuário:</label>
-            <input type="text" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+            <label >Email ou Usuário:</label>
+            <input type="text" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email ou Usuário">
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">Senha:</label>
-            <input type="password" class="form-control" id="senha" placeholder="Password">
+            <label >Senha:</label>
+            <input type="password" class="form-control" id="senha" placeholder="Senha">
         </div>
         <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Salvar dados</label>
+            <input type="checkbox" class="form-check-input">
+            <label class="form-check-label" >Quadar dados</label>
         </div>
         <div class="form-group">
             <button type="submit" id="enviar" class="btn btn-primary">Enviar</button>
@@ -56,23 +56,26 @@ function validar() {
         $("#senha").addClass("is-invalid");
         val = false;
     }
-
     return val;
 }
 
 $("#enviar").click(function(event) {
     event.preventDefault();
     if (validar()) {
+        //POG (Para poder retirecionar)
         $("#fechar").removeClass("d-none");
         $("#fechar1").addClass("d-none");
+        // Fim - POG
         $("#titulo").html("Logado com Sucesso");
         $("#corpo").html("Bem Vindo User !!!");
         $('#modal').modal('show');
     } else {
+        //POG (Para não poder retirecionar)
         $("#fechar1").removeClass("d-none");
         $("#fechar").addClass("d-none");
+        // Fim - POG
         $("#titulo").html("Invalidos");
-        $("#corpo").html("Prencha os Campos");
+        $("#corpo").html("Preencha os Campos");
         $('#modal').modal('show');
     }
 });
