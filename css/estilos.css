@@ -79,16 +79,19 @@ header .d-flex img:hover {
     border: 1px solid #009fff;
 }
 
+.buscar a {
+    margin-top: 5px;
+}
+
 .buscar input {
     border: none;
     background-color: #f8f9fa;
 }
 
-
-.buscar a {
-    margin-top: 5px;
+.buscar input:focus{
+     background-color: #f8f9fa;
+     border: 0px;   
 }
-
 
 /*Fim - Header*/
 
@@ -154,11 +157,11 @@ h1 {
 /*Carrinho*/
 
 .car {
-    border-top: 1px solid #cccccc;
+    border-top: 1px solid #f8f8ff ;
     margin-bottom: 10px;
 
     padding-top: 10px;
-    font-weight: bolder;
+   
 }
 
 .car img {
@@ -167,13 +170,15 @@ h1 {
 }
 
 .car .nomeLivro {
-    color: #009fff;
+    color: #000;
     font-weight: bolder;
 }
 
 .car p {
+    color: #009fff;
     font-weight: 100;
     font-size: 15px;
+    font-weight: bolder;
 }
 
 .car input {
@@ -188,6 +193,7 @@ h1 {
 .total {
     background-color: #CCCCCC;
     height: 40px;
+    font-weight: bolder;
 }
 
 .liv {
