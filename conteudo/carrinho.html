@@ -1,0 +1,70 @@
+<main class="container">
+    <h1><img src="imagens/ic_shopping_cart_azul.svg">Finalizar Carrinho</h1>
+    <section id="carrinho" class="row">
+        <div id="dados" class="row col-12 ">
+        </div>
+        <article class="col-12 car">
+            <div class="row">
+                <div class="col-md-8 col-0">
+                </div>
+                <div class="col-6 col-md-2 total" >
+                    <span class="align-self-center">Valor Total:</span>
+                </div>
+                <div class="col-6 col-md-2 total  ">
+                    <span class="total  align-self-center" id="total"></span>
+                </div>
+            </div>
+        </article>
+    </section>
+</main>
+<script>
+function mudarQuandidade() {
+    $(".quand").change(function() {
+        var superior = $(this).parent().parent();
+        var valor = superior.find(".valorLivro").html();
+        var mult = parseInt(superior.find(".quand").val());
+        valor = valor.replace("R$", "").replace(",", ".");
+        var total = valor * mult;
+        superior.find(".subTotal").attr('dado', total);
+        superior.find(".subTotal").html("R$: " + total.toFixed(2));
+        alterarTotal();
+    });
+
+
+}
+
+function alterarTotal() {
+    var total = 0;
+
+    $.each($(".subTotal").toArray(), function(index, elemento) {
+        total += parseFloat(elemento.getAttribute("dado"));
+    });
+
+
+    $("#total").html("R$: " + total.toFixed(2));
+}
+
+
+function mostarDado() {
+    var livro = JSON.parse(sessionStorage.getItem('livro'));
+    var texto = "";
+    var total = 0;
+
+    if (livro != null) {
+        $.each(livro.livro, function(index, val) {
+            var valores = val.valor.replace("R$", "").replace(",", ".");
+            texto += '<article class="col-12 car "><div class="row"><div class="col-md-6 col-12 liv"><img class="mx-auto img-fluid" src="' + val.image + '"><span class="nomeLivro">' + val.nome + '</span></div><div class="col-4 col-md-2 text-center"><p>Valor</p><span class="valorLivro text-center">' + val.valor + '</span></div><div class="col-4 col-md-2 text-center"><p>Quand</p><input type="number" min=1 class="quand" value="1"></div><div class="col-4 col-md-2 text-center"><p>SubTotal</p><span class="subTotal" dado="' + valores + '">' + val.valor + '</span></div></div></article>';
+
+            total += parseFloat(valores);
+        });
+        $("#dados").html(texto);
+        $("#total").html("R$: " + total.toFixed(2));
+    } else {
+        $("#dados").html("<p class='mx-auto'>Adicione Itens ao Carrinho</p>");
+    }
+    mudarQuandidade();
+
+}
+
+mostarDado();
+</script>

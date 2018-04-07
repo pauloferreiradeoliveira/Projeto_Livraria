@@ -22,7 +22,6 @@
                 <input type="password" class="form-control" id="Senha" placeholder="Password">
             </div>
         </div>
-
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputEmail4">Email:</label>
@@ -86,115 +85,115 @@
             </div>
         </div>
         <button type="submit" id="enviar" class="btn btn-primary">Cadastrar</button>
-        <button type="reset"  class="btn btn-danger">Limpar</button>
+        <button type="reset" class="btn btn-danger">Limpar</button>
     </form>
 </main>
-
 <!-- Modal -->
 <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <!-- Parte Titulo - Modal -->
             <div class="modal-header">
-                <h5 class="modal-title" id="titulo">Logado com Sucesso</h5>
+                <h5 class="modal-title" id="titulo">Cadastrar com Sucesso</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <!-- Parte Corpo - Modal -->
             <div class="modal-body">
-                <p id="corpo">Bem Vindo User !!!</p>
+                <p id="corpo">Obrigado por se Cadastrar =)</p>
             </div>
             <!-- Parte Final - Modal -->
             <div class="modal-footer">
-                <button type="button" id="fechar" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="button" id="fechar" class="btn btn-primary" data-dismiss="modal">Fechar</button>
                 <button type="button" id="fechar1" class="btn btn-danger d-none" data-dismiss="modal">Fechar</button>
             </div>
         </div>
     </div>
 </div>
 <!-- Fim - Modal -->
-
 <!-- Mascara -->
 <script src="js/jquery.mask.min.js"></script>
 <script>
-    
-    $("#cpf").mask("000.000.000-00");
-    $("#cep").mask("00.000-000");
-    function validar() {
-        var bily = true;
+$("#CPF").mask("000.000.000-00");
+$("#CEP").mask("00.000-000");
+$("#Telefone").mask("(00) 0000-0000");
 
-        $("input").removeClass("is-invalid");
+function validar() {
+    var bily = true;
 
-        if ($("#Nome").val() == "") {
-            $("#Nome").addClass("is-invalid");
-            bily = false;
-        }
-        if ($("#CPF").val() == "") {
-            $("#CPF").addClass("is-invalid");
-            bily = false;
-        }
-        if ($("#CEP").val() == "") {
-            $("#CEP").addClass("is-invalid");
-            bily = false;
-        }
+    $("input").removeClass("is-invalid");
 
-        if ($("#Telefone").val() == "") {
-            $("#Telefone").addClass("is-invalid");
-            bily = false;
-        }
-
-        if ($("#Senha").val() == "") {
-            $("#Senha").addClass("is-invalid");
-            bily = false;
-        }
-        if ($("#Email").val() == "") {
-            $("#Email").addClass("is-invalid");
-            bily = false;
-        }
-        if ($("#Confirme").val() == "") {
-            $("#Confirme").addClass("is-invalid");
-            bily = false;
-        }
-        if ($("#Endereco").val() == "") {
-            $("#Endereco").addClass("is-invalid");
-            bily = false;
-        }
-        if ($("#Complemento").val() == "") {
-            $("#Complemento").addClass("is-invalid");
-            bily = false;
-        }
-        if ($("#Cidade").val() == "") {
-            $("#Cidade").addClass("is-invalid");
-            bily = false;
-        }
-        if ($("#Estado").val() == "0") {
-            $("#Estado").addClass("is-invalid");
-            bily = false;
-        }
-        return bily;
+    if ($("#Nome").val() == "") {
+        $("#Nome").addClass("is-invalid");
+        bily = false;
     }
-    
+    if ($("#CPF").val() == "") {
+        $("#CPF").addClass("is-invalid");
+        bily = false;
+    }
+    if ($("#CEP").val() == "") {
+        $("#CEP").addClass("is-invalid");
+        bily = false;
+    }
 
-    $("#enviar").click(function(event) {
-        event.preventDefault();
-        if (validar()) {
-            $("#fechar").removeClass("d-none");
-            $("#fechar1").addClass("d-none");
-            $("#titulo").html("Logado com Sucesso");
-            $("#corpo").html("Bem Vindo User !!!");
-            $('#modal').modal('show');
-        } else {
-            $("#fechar1").removeClass("d-none");
-            $("#fechar").addClass("d-none");
-            $("#titulo").html("Invalidos");
-            $("#corpo").html("Prencha os Campos");
-            $('#modal').modal('show');
-        }
-    });
+    if ($("#Telefone").val() == "") {
+        $("#Telefone").addClass("is-invalid");
+        bily = false;
+    }
 
-    $("#fechar").click(function() {
-        $("form").submit();
-    });
+    if ($("#Senha").val() == "") {
+        $("#Senha").addClass("is-invalid");
+        bily = false;
+    }
+    if ($("#Email").val() == "" || ($("#Email").val() == $("#Confirme").val())) {
+        $("#Email").addClass("is-invalid");
+        bily = false;
+    }
+    if ($("#Confirme").val() == "" || ($("#Email").val() == $("#Confirme").val())) {
+        $("#Confirme").addClass("is-invalid");
+        bily = false;
+    }
+    if ($("#Endereco").val() == "") {
+        $("#Endereco").addClass("is-invalid");
+        bily = false;
+    }
+    if ($("#Complemento").val() == "") {
+        $("#Complemento").addClass("is-invalid");
+        bily = false;
+    }
+    if ($("#Cidade").val() == "") {
+        $("#Cidade").addClass("is-invalid");
+        bily = false;
+    }
+    if ($("#Estado").val() == "0") {
+        $("#Estado").addClass("is-invalid");
+        bily = false;
+    }
+    return bily;
+}
+
+
+$("#enviar").click(function(event) {
+    event.preventDefault();
+    if (validar()) {
+        $("#fechar").removeClass("d-none");
+        $("#fechar1").addClass("d-none");
+        $("#titulo").html("Cadastrar com Sucesso");
+        $("#corpo").html("Obrigado por se Cadastrar =)");
+        $('#modal').modal('show');
+    } else {
+        $("#fechar1").removeClass("d-none");
+        $("#fechar").addClass("d-none");
+        $("#titulo").html("Invalidos");
+        $("#corpo").html("Prencha os Campos");
+        $('#modal').modal('show');
+    }
+});
+
+$("#fechar").click(function() {
+    $("form").submit();
+});
+
 
 </script>

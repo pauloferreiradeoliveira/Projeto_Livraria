@@ -1,18 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 
-body{font-family: 'Quicksand', sans-serif;}
+body {
+    font-family: 'Quicksand', sans-serif;
+}
 
 
 /*
     Cor Primaria:#009fff;
 */
+
+
 /* Header e Nav - Começo */
 
-.dropdown-menu {left: -200px !important;}
+.dropdown-menu {
+    left: -200px !important;
+}
 
 
 @media only screen and (min-width:769px) {
-    header {height: 70px;}
+    header {
+        height: 70px;
+    }
 
     nav {
         background-color: #009fff !important;
@@ -21,59 +29,84 @@ body{font-family: 'Quicksand', sans-serif;}
         transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
     }
 
-    nav div ul li:hover { border-bottom: 2px solid #fff; }
+    nav div ul li:hover {
+        border-bottom: 2px solid #fff;
+    }
 
-    nav div ul li a { color: #fff !important;}
+    .ativ {
+        border-bottom: 2px solid #fff;
+    }
+
+    nav div ul li a {
+        color: #fff !important;
+    }
 }
 
 .dropleft {
     margin-right: 30px;
 }
 
-.logo {height: 65px;}
+.logo {
+    height: 65px;
+}
+
 
 /*User  e Carrinho*/
+
 .icon {
     height: 40px !important;
     margin: 10px;
 }
 
+
 /*Livro do Carrinho*/
-.livro {margin-left: 10px;}
+
+.livro {
+    margin-left: 10px;
+}
 
 header .d-flex img:hover {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
-.navbar-toggler {border: none;}
+.navbar-toggler {
+    border: none;
+}
 
-.buscar{
+.buscar {
     margin-top: 10px;
     border: 1px solid #009fff;
 }
 
-.buscar input{
+.buscar input {
     border: none;
     background-color: #f8f9fa;
 }
 
 
-.buscar a{
+.buscar a {
     margin-top: 5px;
 }
 
+
 /*Fim - Header*/
 
+
 /*Conteudo*/
-main{margin-top: 10px;}
+
+main {
+    margin-top: 10px;
+}
+
 
 /*Para Todos os Links*/
+
 a {
     font-weight: bold;
 }
 
-a:hover{
+a:hover {
     text-decoration: none;
 }
 
@@ -81,33 +114,34 @@ a:hover{
     padding: 0px !important;
 }
 
-.card-body{
+.card-body {
     padding: 4px !important;
     height: 120px;
 }
 
-.card-body p{
-    color:  #17a55f ;
+.card-body p {
+    color: #17a55f;
     font-weight: bolder;
 }
 
-.card-img-top{
+.card-img-top {
     height: 220px;
-
 }
 
-.card{
+.card {
     margin-top: 10px;
 }
-.card:hover{
+
+.card:hover {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-.card-title{
-   font-size: 15px;
+.card-title {
+    font-size: 15px;
 }
 
-.titulos ,h1{
+.titulos,
+h1 {
     margin: 20px 0px 40px 0px;
     width: 100%;
     padding-bottom: 10px;
@@ -117,17 +151,66 @@ a:hover{
 }
 
 
+/*Carrinho*/
+
+.car {
+    border-top: 1px solid #cccccc;
+    margin-bottom: 10px;
+
+    padding-top: 10px;
+    font-weight: bolder;
+}
+
+.car img {
+    width: 50px;
+    padding-right: 10px;
+}
+
+.car .nomeLivro {
+    color: #009fff;
+    font-weight: bolder;
+}
+
+.car p {
+    font-weight: 100;
+    font-size: 15px;
+}
+
+.car input {
+    width: 40px;
+}
+
+.car .row {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.total {
+    background-color: #CCCCCC;
+    height: 40px;
+}
+
+.liv {
+    background-color: #eee;
+    padding: 10px;
+}
+
+
+/* Fim - Carrinho */
+
+
 /*Footer*/
-footer{
+
+footer {
     width: 100%;
     background-color: #009fff;
-    color:#fff;
+    color: #fff;
     text-align: center;
     margin-top: 20px;
     padding: 10px;
-
 }
-footer span{
+
+footer span {
     font-weight: bolder;
 }
 
