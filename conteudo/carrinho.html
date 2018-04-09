@@ -1,7 +1,7 @@
 <main class="container">
     <h1><img src="imagens/ic_shopping_cart_azul.svg">Finalizar Carrinho</h1>
     <section id="carrinho" class="row">
-        <div id="dados" class="row col-12 ">
+        <div id="dados" class="col-12 row">
         </div>
         <article class="col-12 car">
             <div class="row">
@@ -36,6 +36,7 @@ function mudarQuandidade() {
 //Alterando - Valor Total
 function alterarTotal() {
     var total = 0;
+    //Pegando todos os SubValores
     $.each($(".subTotal").toArray(), function(index, elemento) {
         total += parseFloat(elemento.getAttribute("dado"));
     });
@@ -48,10 +49,10 @@ function mostarDado() {
     var texto = "";
     var total = 0;
     if (livro != null) {
+        //Adcionado no lugar certo
         $.each(livro.livro, function(index, val) {
             var valores = val.valor.replace("R$", "").replace(",", ".");
-            texto += '<article class="col-12 car "><div class="row"><div class="col-md-6 col-12 liv"><img class="mx-auto img-fluid" src="' + val.image + '"><span class="nomeLivro">' + val.nome + '</span></div><div class="col-4 col-md-2 text-center"><p>Valor</p><span class="valorLivro text-center">' + val.valor + '</span></div><div class="col-4 col-md-2 text-center"><p>Quand</p><input type="number" min=1 class="quand" value="1"></div><div class="col-4 col-md-2 text-center"><p>SubTotal</p><span class="subTotal" dado="' + valores + '">' + val.valor + '</span></div></div></article>';
-
+            texto += '<article class="col-12 car"><div class="row"><div class="col-md-6 col-12 liv"><img class="mx-auto img-fluid" src="' + val.image + '"><span class="nomeLivro">' + val.nome + '</span></div><div class="col-4 col-md-2 text-center"><p>Valor</p><span class="valorLivro text-center">' + val.valor + '</span></div><div class="col-4 col-md-2 text-center"><p>Quand</p><input type="number" min=1 class="quand" value="1"></div><div class="col-4 col-md-2 text-center"><p>SubTotal</p><span class="subTotal" dado="' + valores + '">' + val.valor + '</span></div></div></article>';
             total += parseFloat(valores);
         });
         $("#dados").html(texto);

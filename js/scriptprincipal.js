@@ -5,21 +5,24 @@ $(document).ready(function() {
             url: "conteudo/" + contudo + ".html",
             beforeSend: function() {
                 $("#container").html('<div class="col-12 mx-auto"><img class-"img-fluid mx-auto d-block" src="imagens/login.gif"><div>');
-
             },
             success: function(resultado) {
                 $("#container").html(resultado);
-                //Para poder adcionar o função para adiconar
+                //Para poder adcionar o função para adiconar no carrinho
                 $(".btn-info").click(function() {
+                    //Pegando Os DADOS do cards
                     var card = $(this).parent().parent();
                     var nome = card.find('.card-title').html();
                     var valor = card.find("p").first().html();
                     var image = card.find('img').attr('src');
+                    //Salvando os DADOS em uma sesson
                     salvarDados(nome, valor, image);
+                    //Mostrando o Livro no Carrinho - header
                     mostraLivro();
                 });
             },
             statusCode: {
+                //ERRO - Não encontrado
                 404: function() {
                     $("#container").html("<div class='col-12 col-md-6 mx-auto'><h1> =( Ops!</h1><p>Pagina não Encotrada</p></div>");
                 }
@@ -28,15 +31,15 @@ $(document).ready(function() {
         //Fim - requisição
     }
 
-    //Para pegar a URL
+    //Para pegar a URL - E modificando a Pagina Principal
     function getUrl() {
         var url = window.location.href;
         url = url.substring(url.search("#") + 1);
+        //Se for a Pagina Principal
         if (url == window.location.href || url == "") {
             mudar($("#logo"),false);
             return "principal";
         }
-
         mudar($("#" + url),false);
         return url;
     }
@@ -44,7 +47,12 @@ $(document).ready(function() {
     //Função - Pegar a URL
     pegarPagina(getUrl());
 
-    //Modificar a Classe Activo do Menu
+    /**
+     * Modificar a Classe Activo do Menu
+     * @item  {[Object]} o elemento clicado
+     * @col  {bool} esconder o menu ao clicar
+     * @return null
+     */
     function mudar(item,col) {
         $("nav li a").removeClass("ativ");
         //Para não adicionar a Classe no LOGIN e no CADASTRAR
@@ -124,9 +132,12 @@ $(document).ready(function() {
     });
     //Função para Mudar a Pagina - Final
 
-
     //Começo - Carrinho
-    //Removendo - Carrinho de Compra
+
+    /**
+     * Removendo - Carrinho de Compra
+     * @return null
+     */
     function remover() {
         $(".remover").click(function() {
             //Pegando o INDEX do Arquivo a Excluir - O numero estar num (Span Oculto)
@@ -140,7 +151,10 @@ $(document).ready(function() {
         });
     }
 
-    //Adicionar Dados no Carrinho de Compras
+    /**
+     * Adicionar Dados no Carrinho de Compras
+     * @return null
+     */
     function mostraLivro() {
         //Pegando DADOS
         var livro = JSON.parse(sessionStorage.getItem('livro'));
@@ -148,6 +162,7 @@ $(document).ready(function() {
         var total = 0;
 
         if (livro != null) {
+            //Adicionado dados
             $.each(livro.livro, function(index, val) {
                 texto += ' <div class="row"><div class="col-3"><img src="' + val.image + '" class="img-fluid livro"></div><div class="col-8"><a href="#">' + val.nome + '</a><p>' + val.valor + '</p><button class="btn btn-danger remover">Remover</button><span class="d-none">' + index + '<span></div></div><div class="dropdown-divider"></div>';
                 val.valor = val.valor.replace("R$", "").replace(",", ".");
@@ -161,7 +176,13 @@ $(document).ready(function() {
         remover();
     };
 
-    // Salvando - Dados na Session
+    /**
+     * Salvando - Dados na Session
+     * @nome  {[String]} Nome do Livro
+     * @valor  {[Float]} Valor do Livro
+     * @imagem  {[String]} Url da Imagem
+     * @return null
+     */
     function salvarDados(nome, valor, image) {
        var myJSON = "";
         if (!sessionStorage.getItem('livro')) {
@@ -174,7 +195,8 @@ $(document).ready(function() {
             };
             myJSON = JSON.stringify(dados);
             
-        } else {
+        } 
+        else {
             var livro = JSON.parse(sessionStorage.getItem('livro'));
             var dado = {
                 "nome": nome,

@@ -153,11 +153,11 @@ function validar() {
         $("#Senha").addClass("is-invalid");
         bily = false;
     }
-    if ($("#Email").val() == "" || ($("#Email").val() == $("#Confirme").val())) {
+    if (($("#Email").val() == "") || ($("#Email").val() == $("#Confirme").val())) {
         $("#Email").addClass("is-invalid");
         bily = false;
     }
-    if ($("#Confirme").val() == "" || ($("#Email").val() == $("#Confirme").val())) {
+    if (($("#Confirme").val() == "") || ($("#Email").val() == $("#Confirme").val())) {
         $("#Confirme").addClass("is-invalid");
         bily = false;
     }
@@ -180,12 +180,13 @@ function validar() {
     return bily;
 }
 
-
 $("#enviar").click(function(event) {
     event.preventDefault();
     if (validar()) {
+        //POG
         $("#fechar").removeClass("d-none");
         $("#fechar1").addClass("d-none");
+        //Fim POG
         $("#titulo").html("Cadastrar com Sucesso");
         $("#corpo").html("Obrigado por se Cadastrar =)");
         $('#modal').modal('show');
@@ -201,6 +202,4 @@ $("#enviar").click(function(event) {
 $("#fechar").click(function() {
     $("form").submit();
 });
-
-
 </script>
